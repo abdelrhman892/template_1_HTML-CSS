@@ -146,56 +146,59 @@
   }
   /* End Header */
   /* Start Landing Section */
-/* Initial landing styling */
+  /* Background zoom-in animation */
+@keyframes zoomBackground {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Intro text fade-in and slide-up animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Applying animations to the landing section */
 .landing {
-  background-image: url(../image/pexels-pixabay-355770.jpg);
+  background-image: url(../image/landing.jpg);
   background-size: cover;
   height: calc(100vh - 64px);
   position: relative;
-  overflow: hidden;
+  animation: zoomBackground 10s ease-in-out infinite alternate;
 }
 
-/* Intro text styling with animation */
 .landing .intro-text {
   position: absolute;
   left: 50%;
   top: 50%;
   text-align: center;
-  transform: translate(-50%, -50%) scale(0.8); /* Start slightly smaller */
+  transform: translate(-50%, -50%);
   width: 320px;
   max-width: 100%;
-  opacity: 0; /* Start invisible */
-  animation: scaleFadeSlide 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; /* Smooth, impactful animation */
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards;
 }
 
-/* Heading styling */
 .landing .intro-text h1 {
   margin: 0;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 50px;
   color: var(--main-color);
 }
 
-/* Paragraph styling */
 .landing .intro-text p {
   font-size: 19px;
   line-height: 1.8;
-}
-
-/* Keyframe for scale, fade-in, and slide-up effect */
-@keyframes scaleFadeSlide {
-  0% {
-      opacity: 0;
-      transform: translate(-50%, -30%) scale(0.8); /* Start smaller and lower */
-  }
-  60% {
-      opacity: 1;
-      transform: translate(-50%, -52%) scale(1.1); /* Slight overshoot */
-  }
-  100% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1); /* Settle at final position */
-  }
 }
 
   /* End Landing Section */
