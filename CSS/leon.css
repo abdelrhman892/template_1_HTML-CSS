@@ -431,6 +431,10 @@ body {
   border-color: #ebeced; /* Change border color on hover */
 }
 
+/* End About  */
+
+/* Start Contact  */
+
 .contact {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
@@ -480,3 +484,5 @@ body {
     font-size: 25px;
   }
 }
+
+/* End Contact  */
